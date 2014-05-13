@@ -1,0 +1,85 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: sans-serif;
+	text-align: center;
+	background-color: #eee;
+	height: 100%;
+}
+
+.grid {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 500;
+	width: 100%;
+	height: 100%;
+}
+
+.grid table{
+	width: 100%;
+	height: 100%;
+}
+
+.grid .row {
+	width: 100%;
+}
+
+.grid .square{
+	/*background: blue;*/
+	/*opacity: 0.3;*/
+	width: 20%;
+}
+
+
+.container {
+	width: 100%;
+	height: 100%;
+}
+
+.hint {
+/*	display: none;*/
+	position: fixed;
+	top: 30px;
+	left: auto;
+	width: 75%;
+	left: 50%;
+	margin: 0 0 0 -37.5%;
+
+}
+
+.hint p {
+	color: #aaa;
+	padding: 10px;
+	margin: 0 auto;
+	background-color: #fff;
+	border-radius: 8px;
+}
+
+.shape {
+	display: none;
+	 transition: all 1s ease;
+}
+
+.shapes{
+	zoom: 150%;
+}
+
+#fiftytwo, #ninety, #thirteen, #thirtynine{
+	transform: scale(3);
+	transition: all 1s ease;
+}
+
+.grid .square.active {
+	opacity: .45;
+}
+
+
+
