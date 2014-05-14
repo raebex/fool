@@ -2,39 +2,7 @@
 	'use strict';
 
 	//sounds
-	var sound;
 	var $sounds = $('.sound');
-	var $f1 = $('#f1');
-	var $f2 = $('#f2');
-	var $f3 = $('#f3');
-	var $f4 = $('#f4');
-	var $f6 = $('#f6');
-	var $f9 = $('#f9');
-	var $f10 = $('#f10');
-
-	var $f11 = $('#f11');
-	var $f12 = $('#f12');
-	var $f13 = $('#f13');
-	var $f14 = $('#f14');
-	var $f15 = $('#f15');
-	var $f16 = $('#f16');
-	var $f17 = $('#f17');
-	var $f19 = $('#f19');
-
-	var $f20 = $('#f20');
-	var $f21 = $('#f21');
-	var $f24 = $('#f24');
-	var $f25 = $('#f25');
-	var $f26 = $('#f26');
-	var $f27 = $('#f27');
-	var $f29 = $('#f29');
-
-	var $f31 = $('#f31');
-	var $f32 = $('#f32');
-	var $f33 = $('#f33');
-	var $f34 = $('#f34');
-	var $f35 = $('#f35');
-	var $f36 = $('#f36');
 
 	//shapes
 	var $shapes = $('#shapes');
@@ -62,30 +30,179 @@
 	}, false)
 
 //sound function
-	$sounds.load();
-	var playSound = function(){
-		sound.currentTime = 0;
-		//sound.load();
-		sound.get(0).play();
-		return false;
-	}
+	//var audioSprite = document.getElementById('fool-audio');
 
-	// var playSound = function(){
-	// 	if (sound.paused) {
- //        sound.trigger('play');
-	//     }else{
-	//         sound.currentTime = 0
+	// // sprite data
+	// var spriteData = {
+	//     fool1: {
+	//         start: 0,
+	//         length: 1
+	//     },
+	//     fool2: {
+	//         start: 1.5,
+	//         length: 0.5
+	//     },
+	//     fool3: {
+	//         start: 2.5,
+	//         length: 3.5
+	//     },
+	//     fool4: {
+	//         start: 6.5,
+	//         length: 0.5
+	//     },
+	//     fool5: {
+	//     	start: 7,
+	//     	length: 0.3
+	//     },
+	//     fool6: {
+	//     	start: 7.5,
+	//     	length: 0.7
+	//     },
+	//     fool7: {
+	//     	start: 8.5,
+	//     	length: 0.5
+	//     },
+	//     fool8: {
+	//     	start: 9.5,
+	//     	length: 2.5
+	//     },
+	//     fool9: {
+	//     	start: 12.5,
+	//     	length: 2.5
+	//     },
+	//     fool10: {
+	//     	start: 15.5,
+	//     	length: 1.2
+	//     },
+	//     fool11: {
+	//     	start: 16.5,
+	//     	length: 0.5
+	//     },
+	//     fool12: {
+	//     	start: 17.5,
+	//     	length: 0.5
+	//     },
+	//     fool13: {
+	//     	start: 18.5,
+	//     	length: 0.3
+	//     },
+	//     fool14: {
+	//     	start: 19,
+	//     	length: 1.5
+	//     },
+	//     fool15: {
+	//     	start: 21,
+	//     	length: 1.5
+	//     },
+	//     fool16: {
+	//     	start: 23,
+	//     	length: 0.7
+	//     },
+	//     fool17: {
+	//     	start: 24,
+	//     	length: 0.3
+	//     },
+	//     fool18: {
+	//     	start: 24.5,
+	//     	length: 3.2
+	//     },
+	//     fool19: {
+	//     	start: 28,
+	//     	length: 1.5
+	//     },
+	//     fool20: {
+	//     	start: 30,
+	//     	length: 0.5
+	//     },
+	//     fool21: {
+	//     	start: 31,
+	//     	length: 0.7
+	//     },
+	//     fool22: {
+	//     	start: 32,
+	//     	length: 0.5
+	//     },
+	//     fool23: {
+	//     	start: 33,
+	//     	length: 0.5
+	//     },
+	//     fool24: {
+	//     	start: 34,
+	//     	length: 0.3
+	//     },
+	//     fool25: {
+	//     	start: 34.5,
+	//     	length: 0.3
+	//     },
+	//     fool26: {
+	//     	start: 35,
+	//     	length: 0.3
+	//     },
+	//     fool27: {
+	//     	start: 35.5,
+	//     	length: 0.5
+	//     },
+	// };
+
+	// // current sprite being played
+	// var currentSprite = {};
+
+	// // time update handler to ensure we stop when a sprite is complete
+	// var onTimeUpdate = function() {
+	//     if (this.currentTime >= currentSprite.start + currentSprite.length) {
+	//         this.pause();
 	//     }
-	//     return false;
-	// }
-	
+	// };
+	// sound.addEventListener('timeupdate', onTimeUpdate, false);
+
+	// // in mobile Safari, the first time this is called will load the audio. Ideally, we'd load the audio file completely before doing this.
+	// var playSprite = function(id) {
+	//     if (spriteData[id] && spriteData[id].length) {
+	//         currentSprite = spriteData[id];
+	//         audioSprite.currentTime = currentSprite.start;
+	//         audioSprite.play();
+	//     }
+	// };
+
+	var sound = new Howl({  
+		urls: ['sounds/fool_sprite.mp3', 'sounds/fool_sprite.ogg'],  
+		sprite: {    
+			fool1: [0, 1000],   
+			fool2: [1500, 500],
+			fool3: [2500, 3500],
+			fool4: [6500, 300], 
+			fool5: [7000, 300], 
+			fool6: [7500, 700], 
+			fool7: [8500, 500], 
+			fool8: [9500, 2500], 
+			fool9: [12500, 2500], 
+			fool10: [15500, 1200], 
+			fool11: [16500, 500], 
+			fool12: [17500, 500], 
+			fool13: [18500, 300], 
+			fool14: [19000, 1500], 
+			fool15: [21000, 1500], 
+			fool16: [23000, 700],
+			fool17: [24000, 300], 
+			fool18: [24500, 3200],  
+			fool19: [28000, 1500], 
+			fool20: [30000, 500], 
+			fool21: [31000, 700], 
+			fool22: [32000, 500], 
+			fool23: [33000, 500], 
+			fool24: [34000, 300], 
+			fool25: [34500, 300], 
+			fool26: [35000, 300], 
+			fool27: [35500, 500], 
+		},
+		autoplay: false,
+        loop: false,
+	});// shoot the laser!sound.play('laser');
 
 //animations--------------------->
 
 	var qZoom = function(){	
-		sound = $f1;
-		sound.get(0).pause();	
-		playSound();
+		sound.play('fool1');
 		$('#seventythree').stop(true, true).fadeIn(50, function(){
 			$('#eightynine').fadeIn(50, function(){
 				$('#fourteen').fadeIn(50, function(){
@@ -115,8 +232,7 @@
 	} 
 
 	var wJiggleZoom = function(){
-		sound = $f2;	
-		playSound();
+		sound.play('fool2');
 		$('#two').stop(true, true).fadeIn('fast', function(){
 			$('#two').css({
 				"transform" : "scale(2)",
@@ -128,8 +244,7 @@
 	}
 
 	var eJiggle = function(){
-		sound = $f3;	
-		playSound();
+		sound.play('fool3');
 		$('#three').stop(true, true).fadeIn(50, function(){
 			$('#twentyone').fadeIn(50, function(){
 				$('#ninetyfive').fadeIn(50, function(){
@@ -144,8 +259,7 @@
 	}
 
 	var rFadeIn = function(){
-		sound = $f4;	
-		playSound();
+		sound.play('fool4');
 		$('#four').stop(true, true).fadeIn('normal', function(){
 			$(this).fadeOut('slow');
 		});
@@ -156,23 +270,19 @@
 	}
 
 	var tSkyAqua = function(){
-		sound = $f6;	
-		playSound();
+		sound.play('fool5');
 		$('.sky, .aqua').stop(true, true).fadeIn('normal', function(){
 			$(this).fadeOut('slow');
 		});
 	}
 
 	var ySquiggle = function(){
-		sound = $f9;	
-		playSound();
+		sound.play('fool6');
 		$('#sixtyeight, #fortyfive, #thirtyfive').stop(true, true).fadeIn().delay(2000).fadeOut();
 	}
 
 	var uZoomOut = function(){
-		sound = $f10;	
-		playSound();
-
+		sound.play('fool7');
 		$('#seven').stop(true, true).fadeIn('fast', function(){
 			$(this).css({
 				"transform" : "scale(-1)",
@@ -184,9 +294,7 @@
 	}
 
 	var iPink = function(){
-		sound = $f11;	
-		playSound();
-
+		sound.play('fool8');
 		$('#eight').stop(true, true).fadeIn('fast', function(){
 			$('#nine').fadeIn('fast', function(){
 				$('#six').fadeIn('fast', function(){
@@ -197,9 +305,7 @@
 	}
 
 	var oSplit = function(){
-		sound = $f12;	
-		playSound();
-
+		sound.play('fool9');
 		$('#nine, #thirtyseven').stop(true, true).fadeIn('fast', function(){
 			$('#nine').delay(500).css({
 				"transform" : "scale(2) rotate(-80deg)",
@@ -215,29 +321,24 @@
 	}
 
 	var pFadeIn = function(){
-		sound = $f13;	
-		playSound();
-
+		sound.play('fool10');
 		$('#ten').stop(true, true).fadeIn('fast', function(){
 			$(this).fadeOut('slow');
 		});
 	}
 
 	var aTanGold = function(){
-		sound = $f14;	
-		playSound();
+		sound.play('fool11');
 	    $('.tan, .gold').stop(true, true).fadeIn().delay(100).fadeOut();
 	}
 
 	var sFadeIn = function(){
-		sound = $f15;	
-		playSound();
+		sound.play('fool12');
 	    $('#onehundred24, #fiftyfive, #seventytwo, #onehundred1').stop(true, true).fadeIn().delay(100).fadeOut();
 	}
 
 	var dTanDots = function(){
-		sound = $f16;	
-		playSound();
+		sound.play('fool13');
 	    $('#onehundred55').stop(true, true).fadeIn(50, function(){
 			$('#onehundred54').fadeIn(50, function(){
 				$('#onehundred57').fadeIn(50, function(){
@@ -260,8 +361,7 @@
 	}
 
 	var fZoomOut = function(){
-		sound = $f17;	
-		playSound();
+		sound.play('fool14');
 		$('#fiftytwo, #ninety, #thirteen, #thirtynine').stop(true, true).fadeIn('normal', function(){
 			$(this).css({
 				"transform" : "scale(0.5)",
@@ -273,16 +373,14 @@
 	}
 
 	var gBack = function(){
-		sound = $f19;	
-		playSound();
+		sound.play('fool15');
 		$container.css({
 	    	"background-color": "#efafa5"
 	    });
 	}
 
 	var hSmile = function(){
-		sound = $f20;	
-		playSound();
+		sound.play('fool16');
 	    $('#onehundred28').stop(true, true).fadeIn(50, function(){
 			$('#onehundred55').fadeIn(50, function(){
 				$('#fiftysix').fadeIn(50, function(){
@@ -293,8 +391,7 @@
 	}
 
 	var jFadeIn = function(){
-		sound = $f21;	
-		playSound();
+		sound.play('fool17');
 		$('#twelve').stop(true, true).fadeIn(50, function(){
 			$('#fiftythree').fadeIn(50, function(){
 				$('#ten').fadeIn(50, function(){
@@ -309,14 +406,12 @@
 	}
 
 	var kJiggle = function(){
-		sound = $f24;	
-		playSound();
+		sound.play('fool18');
 		$('#twentysix, #onehundred30, #onehundred12, #onehundred18').stop(true, true).fadeIn().delay(100).fadeOut();
 	}
 
 	var lSplit = function(){
-		sound = $f25;	
-		playSound();
+		sound.play('fool19');
 		$('#seventeen').stop(true, true).fadeIn(50, function(){
 			$('#sixteen').fadeIn(50, function(){
 				$('#fortynine').fadeIn(50, function(){
@@ -341,8 +436,7 @@
 	}
 
 	var zZoom = function(){
-		sound = $f26;	
-		playSound();
+		sound.play('fool20');
 	    $('#one').stop(true, true).fadeIn(50, function(){
 			$('#sixtythree').fadeIn(50, function(){
 				$('#fiftynine').fadeIn(50, function(){
@@ -372,14 +466,12 @@
 	}
 
 	var xSguiggle = function(){
-		sound = $f27;	
-		playSound();
+		sound.play('fool21');
 	    $('#eightyfive, #thirtytwo, #twentytwo').stop(true, true).fadeIn().delay(2000).fadeOut();
 	}
 
 	var cSplit = function(){
-		sound = $f29;	
-		playSound();
+		sound.play('fool22');
 	    $('#twenty, #eighteen').stop(true, true).fadeIn('fast', function(){
 			$('#twenty').delay(500).css({
 				"transform" : "scale(2) rotate(-30deg)",
@@ -395,16 +487,14 @@
 	}
 
 	var vBack = function(){
-		sound = $f31;	
-		playSound();
+		sound.play('fool23');
 		$container.css({
 			"background-color": "#fff100"
 		});
 	}
 
 	var bBlack = function() {
-		sound = $f32;	
-		playSound();
+		sound.play('fool24');
 	    $('#sixtyfour').stop(true, true).fadeIn(50, function(){
 			$('#ninetyone').fadeIn(50, function(){
 				$('#ninetythree').fadeIn(50, function(){
@@ -427,8 +517,7 @@
 	}
 
 	var nZoomOut = function(){
-		sound = $f33;	
-		playSound();
+		sound.play('fool25');
 		$('#onehundred13, #onehundred21, #thirtyeight, #seventynine, #seventyeight, #twentynine').stop(true, true).fadeIn('normal', function(){
 			$(this).css({
 				"transform" : "scale(0.3)",
@@ -440,8 +529,7 @@
 	}
 
 	var mZoom = function(){
-		sound = $f34;	
-		playSound();
+		sound.play('fool26');
 	    $('#seventythree').stop(true, true).fadeIn(50, function(){
 			$('#eightynine').fadeIn(50, function(){
 				$('#fourteen').fadeIn(50, function(){
@@ -471,8 +559,7 @@
 	}
 
 	var backDefault =  function(){
-		sound = $f36;	
-		playSound();
+		sound.play('fool27');
 		$container.css({
 			"background-color": "#eee"
 		});
