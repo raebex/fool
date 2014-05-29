@@ -16,10 +16,9 @@
 
 //check for mobile
 	if (has.mobile === true){
-		console.log('hi');
-		$hint.children('p').text('Touch anywhere!');
+		$hint.children('p').html('Touch anywhere, everywhere!' + '<br><br>' + 'Turn up your speakers for the audio features!');
 	}else {
-		$hint.children('p').text('Press any key, A to Z!');
+		$hint.children('p').html('Press any key A to Z!' + '<br><br>' + 'Turn up your speakers for the audio features!');
 	}
 
 	window.addEventListener('load', function(){ // on page load
@@ -31,7 +30,7 @@
 	}, false)
 
 
-//sound sprite
+//audio sprite
 	var sound = new Howl({  
 		urls: ['sounds/fool_sprite.mp3', 'sounds/fool_sprite.ogg'],  
 		sprite: {    
