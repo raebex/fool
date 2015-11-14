@@ -1,0 +1,155 @@
+@mixin transform-pre($var){
+  -webkit-transform: $var;
+  -moz-transform: $var;
+  -o-transform: $var;
+  transform: $var;
+}
+
+//Webkit//
+@-webkit-keyframes plus_scale {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  25% {@include transform-pre(scale(3)); opacity: 1;}
+  100% {@include transform-pre(scale(1)); opacity: 0;}
+}
+
+@-webkit-keyframes min_scale {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  75% {@include transform-pre(scale(0)); opacity: 1;}
+  100% {@include transform-pre(scale(1)); opacity: 0;}
+}
+
+@-webkit-keyframes down_swoosh {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  75% {@include transform-pre(scale(2) rotate(20deg) translateX(30px) translateY(-100px)); opacity: 1;}
+  100% {@include transform-pre(scale(1)); opacity: 0;}
+}
+
+@-webkit-keyframes split_up {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  100% {@include transform-pre(translateX(30px) translateY(-200px)); opacity: 1;}
+}
+
+@-webkit-keyframes split_down {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  100% {@include transform-pre(translateX(-30px) translateY(500px)); opacity: 1;}
+}
+
+@-webkit-keyframes left {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  50% {@include transform-pre(translateX(-300px)); opacity: 1;}
+}
+
+@-webkit-keyframes right {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  50% {@include transform-pre(translateX(300px)); opacity: 1;}
+}
+
+@-webkit-keyframes hideshow {
+  0% {opacity: 0;}
+  30% {opacity: 1;}
+  55% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@-webkit-keyframes floatie {
+  0% {@include transform-pre(translate(0,0));}
+  50% {@include transform-pre(translate(5px,5px));}
+  100% {@include transform-pre(translate(0,0));}
+}
+
+//Moz//
+@-moz-keyframes plus_scale {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  25% {@include transform-pre(scale(3)); opacity: 1;}
+  100% {@include transform-pre(scale(1)); opacity: 0;}
+}
+
+@-moz-keyframes min_scale {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  75% {@include transform-pre(scale(0)); opacity: 1;}
+  100% {@include transform-pre(scale(1)); opacity: 0;}
+}
+
+@-moz-keyframes down_swoosh {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  75% {@include transform-pre(scale(2) rotate(20deg) translateX(30px) translateY(-100px)); opacity: 1;}
+  100% {@include transform-pre(scale(1)); opacity: 0;}
+}
+
+@-moz-keyframes split_up {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  100% {@include transform-pre(translateX(30px) translateY(-200px)); opacity: 1;}
+}
+
+@-moz-keyframes split_down {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  100% {@include transform-pre(translateX(-30px) translateY(500px)); opacity: 1;}
+}
+
+@-moz-keyframes left {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  50% {@include transform-pre(translateX(-300px)); opacity: 1;}
+}
+
+@-moz-keyframes right {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  50% {@include transform-pre(translateX(300px)); opacity: 1;}
+}
+
+@-moz-keyframes hideshow {
+  0% {opacity: 0;}
+  30% {opacity: 1;}
+  55% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes plus_scale {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  25% {@include transform-pre(scale(3)); opacity: 1;}
+  100% {@include transform-pre(scale(1)); opacity: 0;}
+}
+
+@keyframes min_scale {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  75% {@include transform-pre(scale(0)); opacity: 1;}
+  100% {@include transform-pre(scale(1)); opacity: 0;}
+}
+
+@keyframes down_swoosh {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  75% {@include transform-pre(scale(2) rotate(20deg) translateX(30px) translateY(-100px)); opacity: 1;}
+  100% {@include transform-pre(scale(1)); opacity: 0;}
+}
+
+@keyframes split_up {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  100% {@include transform-pre(translateX(30px) translateY(-200px)); opacity: 1;}
+}
+
+@keyframes split_down {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  100% {@include transform-pre(translateX(-30px) translateY(500px)); opacity: 1;}
+}
+
+@keyframes left {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  50% {@include transform-pre(translateX(-300px)); opacity: 1;}
+}
+
+@keyframes right {
+  0% {@include transform-pre(scale(1)); opacity: 0;}
+  50% {@include transform-pre(translateX(300px)); opacity: 1;}
+}
+
+@keyframes hideshow {
+  0% {opacity: 0;}
+  30% {opacity: 1;}
+  55% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes floatie {
+  0% {@include transform-pre(translate(0,0));}
+  50% {@include transform-pre(translate(5px,5px));}
+  100% {@include transform-pre(translate(0,0));}
+}

@@ -1,0 +1,139 @@
+@import 'keyframes';
+
+$ease-in: cubic-bezier(0.22,0.44,0,1);
+
+@mixin transition-ease($duration: 0.3s) {
+  -webkit-transition: all $duration $ease-in;
+  -moz-transition: all $duration $ease-in;
+  -o-transition: all $duration $ease-in;
+  transition: all $duration $ease-in;
+}
+
+@mixin animate-me($name, $duration){
+  -webkit-animation: $name $duration $ease-in;
+  -moz-animation: $name $duration $ease-in;
+  -o-animation: $name $duration $ease-in;
+  animation: $name $duration $ease-in;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #eee;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  width: 100%;
+  height: 100%;
+
+    table {
+      width: 100%;
+      height: 100%;
+    }
+
+  .row {
+    width: 100%;
+  }
+
+  .square{
+    width: 20%;
+  }
+}
+
+.hint {
+  background-color: #fff;
+  border-radius: 8px;
+  position: fixed;
+  top: 80px;
+  left: auto;
+  width: 50%;
+  left: 50%;
+  margin: 0 0 0 -25.5%;
+
+  p, h1 {
+    color: #aaa;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  p {
+    line-height: 1.5em;
+  }
+}
+
+.shape {
+  @include transition-ease();
+  @include animate-me(floatie, 1s);
+  animation-iteration-count: infinite;
+  display: none;
+}
+
+.grid .square.active {
+  opacity: .45;
+}
+
+#nine, #thirtyseven, #six, #eight, #sixteen, #fortynine, #seventeen {
+  @include transition-ease();
+  opacity: 0;
+}
+
+#two, #qZoom, #tan-dots, #seven, #eJiggle, #four, #skyaqua, 
+#ySguiggle, #ten, #sFadeIn, #fZoomOut, #hSmile, #jFadeIn, #kJiggle,
+#xSguiggle, #eighteen, #twenty, #zZoom, #nZoomOut {
+  @include transition-ease(1s);
+  opacity: 0;
+}
+
+#eJiggle.hideshow, #four.hideshow, #skyaqua.hideshow, 
+#ySguiggle.hideshow, #sFadeIn.hideshow,
+#tan-dots.hideshow, #hSmile.hideshow, #jFadeIn.hideshow, #kJiggle.hideshow, 
+#xSguiggle.hideshow{
+  @include animate-me(hideshow, 1.5s);
+}
+
+#two.scale {
+  @include animate-me(plus_scale, 1s);
+}
+
+#seven.min_scale, #fZoomOut.min_scale {
+  @include animate-me(min_scale, 3s);
+}
+
+#qZoom.down_swoosh, #ten.down_swoosh, #zZoom.down_swoosh {
+  @include animate-me(down_swoosh, 1s);
+}
+
+#nine.splitup, #seventeen.splitup, #nZoomOut.splitup {
+  @include animate-me(split_up, 1s);
+}
+
+#thirtyseven.splitdown, #fortynine.splitdown, #sixteen.splitdown {
+  @include animate-me(split_down, 1s);
+}
+
+#six.right, #eighteen.right {
+  @include animate-me(right, 1s);
+}
+
+#eight.left, #twenty.left {
+  @include animate-me(left, 1s);
+}
